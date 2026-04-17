@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.env
+*.log
+logs/telemetry.log
+test/tmp/
+data/cnefe/
+.DS_Store

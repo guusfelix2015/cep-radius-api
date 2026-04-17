@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Busca de CEPs por raio</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Consulta geoespacial</p>
+          <h1>Busca de CEPs por raio</h1>
+          <p>Informe um CEP de origem e a distancia em quilometros para encontrar registros proximos.</p>
+        </div>
+        <img
+          class="header-image"
+          src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=320&q=80"
+          alt="Mapa com marcadores de localizacao"
+        />
+      </header>
+
+      <section class="search-panel" aria-label="Busca">
+        <form id="search-form">
+          <label>
+            CEP
+            <input id="cep" name="cep" value="38400001" autocomplete="postal-code" required />
+          </label>
+          <label>
+            Raio em KM
+            <input id="raioKm" name="raioKm" type="number" min="0.1" step="0.1" value="2" required />
+          </label>
+          <div class="actions">
+            <button id="submit" type="submit">Buscar</button>
+            <button id="clear" class="secondary-button" type="button">Limpar</button>
+          </div>
+        </form>
+        <div id="status" class="status" role="status"></div>
+      </section>
+
+      <section class="results-panel" aria-label="Resultados">
+        <div class="results-header">
+          <h2>Resultados</h2>
+          <span id="result-count">Nenhuma busca executada</span>
+        </div>
+        <div class="results-scroll">
+          <ul id="results" class="result-list" aria-live="polite"></ul>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
